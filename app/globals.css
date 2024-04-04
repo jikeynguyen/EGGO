@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+:root {
+  height: 100%;
+}
+
+.leaflet-bottom,
+.leaflet-control,
+.leaflet-pane,
+.leaflet-top {
+  z-index: 0 !important;
+}
+
+.rdrMonth {
+  width: 100% !important;
+}
+.rdrCalenderWrapper {
+  font-size: 16px !important;
+  width: 100% !important;
+}
+
+.navbar {
+  background-color: #ffffff;
+}
+
+.navbar-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar-list li {
+  margin-right: 20px;
+}
+
+.navbar-list li:last-child {
+  margin-right: 0;
+}
+
+.navbar-list li a {
+  color: #000000;
+  text-decoration: none;
+  padding: 10px;
+  font-size: 19px; 
+  text-decoration: none; /* Loại bỏ gạch chân */
+  transition: all 0.3s ease; /* Tạo hiệu ứng chuyển đổi mượt mà */
+}
+
+
+
+.navbar-list li a:hover {
+  /*background-color: #ebebeb;  Màu nền khi di chuột qua */
+  color: #000000; /* Đổi màu chữ khi di chuột qua */
+  font-weight: bold; /* Làm đậm chữ */
+  text-decoration: underline; /* Thêm gạch dưới */
+  text-decoration-color: #757272; /* Màu của gạch dưới */
+}
+
