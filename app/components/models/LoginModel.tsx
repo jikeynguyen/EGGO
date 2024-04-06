@@ -125,8 +125,8 @@ const LoginModel = () => {
           disabled={isLoaded}
           isOpen={LoginModel.isOpen}
           onClose={LoginModel.onClose}
-          title="Login"
-          actionLabel="Login"
+          title="Đăng nhập"
+          actionLabel="Đăng nhập"
           onSubmit={handleSubmit(onSubmit)}
           body={bodyContent}
           footer={footerContent}
