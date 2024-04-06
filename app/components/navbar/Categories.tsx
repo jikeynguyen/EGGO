@@ -54,7 +54,7 @@ export const categories = [
   {
     label: "Nông nghiệp xanh",
     icon: GiGreenhouse,
-    description: "This property is nông nghiê xanh!",
+    description: "This property is Nông nghiệp xanh!",
   },
 
   {
