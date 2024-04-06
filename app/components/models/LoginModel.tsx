@@ -73,7 +73,7 @@ const LoginModel = () => {
             id="email"
             label="Email"
             type="email"
-            placeholder="Enter your email"
+            placeholder="Nhập email của bạn"
             required
             disabled={isLoaded}
             register={register}
@@ -81,10 +81,10 @@ const LoginModel = () => {
         />
         <Input
             id="password"
-            label="Password"
+            label="Mật khẩu"
             type="password"
             disabled={isLoaded}
-            placeholder="Enter your password"
+            placeholder="Nhập mật khẩu của bạn"
             required
             register={register}
             errors={errors}

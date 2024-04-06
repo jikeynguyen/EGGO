@@ -55,7 +55,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
           duration-200
         "
                 >
-                    Bắt đầu hành trình!
+                    Đăng ký dịch vụ của bạn!
                 </div>
                 <div
                     onClick={toggleOpen}
@@ -124,7 +124,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
                                 />
                                 <MenuItem
                                     onClick={rentModel.onOpen}
-                                    label="Bắt đầu hành trình!"
+                                    label="Đăng ký dịch vụ của bạn!"
                                 />
                                 <hr />
                                 <MenuItem onClick={() => signOut()} label="Đăng xuất" />
