@@ -43,9 +43,9 @@ const RentModel = () => {
     defaultValues: {
       category: "",
       location: null,
-      guestCount: 1,
-      roomCount: 1,
-      bathroomCount: 1,
+      guestCount: 1, //tinh so nguoi choi
+      venueCount: 1, //tinh so san
+      fieldCount: 1, //tinh phan loai san
       imageSrc: "",
       price: 1,
       description: "",
@@ -55,8 +55,8 @@ const RentModel = () => {
   const category = watch("category");
   const location = watch("location");
   const guestCount = watch("guestCount");
-  const roomCount = watch("roomCount");
-  const bathroomCount = watch("bathroomCount");
+  const roomCount = watch("venueCount");
+  const bathroomCount = watch("fieldCount");
   const imageSrc = watch("imageSrc");
 
   const Map = useMemo(
@@ -108,24 +108,24 @@ const RentModel = () => {
 
   const actionLabel = useMemo(() => {
     if (step === STEPS.PRICE) {
-      return "Create";
+      return "Tạo";
     }
-    return "Next";
+    return "Tiếp theo";
   }, [step]);
 
   const secondaryActionLabel = useMemo(() => {
     if (step === STEPS.CATEGORY) {
       return undefined;
     }
-    return "Back";
+    return "Quay lại";
   }, [step]);
 
   let bodyContent = (
     <div className="flex flex-col gap-8">
       <Heading
         center={false}
-        title="What type of property are you renting?"
-        subtitle="Pick a category that best describes your property"
+        title="Bạn muốn đăng ký hoạt động nào?"
+        subtitle="Chọn danh mục mô tả đúng nhất với dịch vụ của bạn"
       />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-h-[50vh] overflow-y-auto">
         {categories.map((item) => {
@@ -150,8 +150,8 @@ const RentModel = () => {
       <div className="flex flex-col gap-8">
         <Heading
           center={false}
-          title="Where is your place located?"
-          subtitle="Help Guests find you!"
+          title="Chỗ của bạn nằm ở đâu?"
+          subtitle="Giúp khách tìm thấy bạn!"
         />
         <CountrySelect
           onChange={(value) => setCustomValue("location", value)}
@@ -168,28 +168,28 @@ const RentModel = () => {
       <div className="flex flex-col gap-8">
         <Heading
           center={false}
-          title="How many guests can your place accommodate?"
-          subtitle="Make sure to include all guests, even if they are children"
+          title="Nơi của bạn có thể chứa tối đa bao nhiêu người?"
+          subtitle="Đảm bảo bao gồm tất cả khách, ngay cả khi họ là trẻ em"
         />
         <Counter
-          title="Guests"
-          subtitle="How many guests do you allow?"
+          title="Khách hàng"
+          subtitle="Bạn cho phép bao nhiêu khách?"
           value={guestCount}
           onChange={(value) => setCustomValue("guestCount", value)}
         />
         <hr />
         <Counter
-          title="Rooms"
-          subtitle="How many rooms do you have?"
+          title="Sân/Phòng"
+          subtitle="Bạn có bao nhiêu Sân/Phòng?"
           value={roomCount}
-          onChange={(value) => setCustomValue("roomCount", value)}
+          onChange={(value) => setCustomValue("venueCount", value)}
         />
         <hr />
         <Counter
-          title="Bathrooms"
-          subtitle="How many bathrooms do you have?"
+          title="Số người cho 1 Sân/Phòng"
+          subtitle="Số người cho 1 Sân/Phòng?"
           value={bathroomCount}
-          onChange={(value) => setCustomValue("bathroomCount", value)}
+          onChange={(value) => setCustomValue("fieldCount", value)}
         />
       </div>
     );
@@ -272,7 +272,7 @@ const RentModel = () => {
   return (
     <div className="">
       <Model
-        title="Your Hotel Home!"
+        title="Trở thành đối tác của EGGO"
         isOpen={RentModel.isOpen}
         onClose={RentModel.onClose}
         onSubmit={handleSubmit(onSubmit)}
