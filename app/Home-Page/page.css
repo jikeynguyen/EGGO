@@ -1,0 +1,234 @@
+
+.event {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+  }
+  
+  .event-item {
+    text-align: center;
+    margin: 10px;
+    transition: box-shadow 0.3s ease; 
+  .event-image {
+    width: 230px;
+    height: 120px;
+    object-fit: cover; /*  ảnh không  biến dạng */
+    border-radius: 5px; 
+  }
+  
+  .event-text {
+    margin-top: 5px; 
+    font-size: 17px;
+    font-weight: bold;
+    width: 220px
+  }
+}
+.event-item:hover {
+    opacity: 0.5;
+    transition: opacity 0.5s ease;
+  }
+  .see-more {
+    background-color: #f0f0f0; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    padding-left: 35px ;
+    padding-right: 35px ;  
+    display: inline-block; 
+    margin: auto;
+    cursor: pointer;
+  }
+  .see-more:hover {
+    background-color: #6ab46e7b; 
+  }
+  
+  .container {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
+.event-item2 {
+    text-align: center;
+    margin: 10px;
+    transition: box-shadow 0.3s ease; 
+  .event-image2 {
+    width: 350px;
+    height: 700px;
+    object-fit: cover;
+    border-radius: 10px; 
+  }}
+
+.event-image3 {
+    width: 360px;
+    height: 360px;
+    object-fit: cover; 
+    border-radius: 20px; 
+    padding: 10px;
+    
+  }
+  .event-image4 {
+    width: 360px;
+    height: 360px;
+    object-fit: cover; 
+    border-radius: 20px; 
+    padding: 10px;
+    
+  }
+  .event-item2:hover {
+    opacity: 0.5;
+    transition: opacity 0.5s ease;
+  }
+
+  .event-image3:hover {
+    opacity: 0.5;
+    transition: opacity 0.5s ease;
+  } 
+  .event-image4:hover {
+    opacity: 0.5;
+    transition: opacity 0.5s ease;
+  }
+  
+  .header-container {
+    display: flex;
+    align-items: center; /* Căn giữa các thành phần theo chiều dọc */
+    text-align: center;
+  }
+  
+  .header-title {
+    font-weight: bold;
+    font-size: 32px;
+    margin: 0 20px; /* Khoảng cách giữa chữ và đường kẻ */
+  }
+  
+  .line {
+    flex-grow: 1; /* Đường kẻ sẽ chiếm hết không gian còn lại */
+    height: 2px; /* Độ dày của đường kẻ */
+    background-color: #ada598; /* Màu của đường kẻ */
+  }
+
+  .phukien-image1 {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 10px; 
+    padding: 10px;
+  }
+  
+  .phukien-image2 {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 10px; 
+    padding: 10px;
+  }
+  .phukien-image3 {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 10px; 
+    padding: 10px;
+  }
+ .phukien-item1 {
+    text-align: center;
+    margin: 10px;
+    transition: box-shadow 0.3s ease; }
+
+    .phukien-image3:hover {
+        opacity: 0.5;
+        transition: opacity 0.5s ease;
+      }
+      .phukien-image2:hover {
+        opacity: 0.5;
+        transition: opacity 0.5s ease;
+      }
+      .phukien-image1:hover {
+        opacity: 0.5;
+        transition: opacity 0.5s ease;
+      }
+      .info-text {
+        font-size: 23px; 
+        color: #333; 
+        max-width: 800px; 
+        margin: 0 auto; 
+        line-height: 1.6; }
+.app-container {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+          }
+          
+          .text-label,
+          .text-value {
+            margin-bottom: 10px;
+            font-size: 16px;
+          }
+          
+          .submit-button {
+            padding: 10px 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            cursor: pointer;
+            outline: none;
+            font-size: 16px;
+          }
+          
+          .submit-button:hover {
+            background-color: #f7f7f7;
+          }
+        
+          .button-register {
+            background-color: #f6f7f6;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+            outline: none;
+            margin: 0 10px;
+            color: #006885;
+          }
+          
+          .button-register:hover {
+            background-color: #106f89; /* Darker shade for hover */
+            color: #e0e5e0;
+          }
+          /* App.css */
+.title-container {
+    display: flex;
+    align-items: center;
+    background: #f0f0f0;
+    padding-left: 35px; /* Increase space the bar */
+    padding-right: 15px;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    position: relative;
+    margin: 15px;
+
+    width: 450px;
+    margin-left: 7%;
+    border-radius: 5px;
+    
+  }
+  
+  .title-container::before {
+    content: '';
+    display: block;
+    width: 5px;
+    height: 100%;
+    background-color: #000;
+    position: absolute;
+    left: 12%;
+    border-radius: 0px 20px 0 20px; 
+  }
+  
+  .title-text {
+    padding-left: 15px; /* Adjust space between bar and text */
+    color: black;
+    font-weight: bold;
+    font-size: 28px;
+    margin-left: 18%;
+  }
+  
