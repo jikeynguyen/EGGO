@@ -1,7 +1,7 @@
 .back-ground{
     background-color: #e0e0e0;
 }
-/* Footer.css */
+
 .footer-content {
     display: flex;
     justify-content: space-around;
@@ -41,11 +41,34 @@
   
   footer {
     width: 100%;
-    padding: 20px 0;
+    padding: 20px ;
     border-top: 2px solid #4a5568; /* Thêm biên phân cách màu sẫm */
     text-align: center;
     color: #a0aec0;
     background-color: #2d3748; /* Màu nền tối hơn cho footer */
+
+  }
+
+  .icon-footer {
+    font-size: 32px; /* Kích thước icon */
+    color: #8DC4F0; 
+    border-radius: 30%; 
+  }
+  .icon-div{
+    padding: 10px;
+  }
+  
+ 
+  .hover:opacity-50 {
+    opacity: 0.5;
+    transition: opacity 0.5s ease;
+  }
+  .heading{
+    font-size: 18px;
+    font-weight: bold;
+    color: #cbd5e0;
+    padding-bottom: 5px;
+
   }
   
   /* Thêm một số điều chỉnh nhỏ cho phần responsive */
