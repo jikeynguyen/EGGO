@@ -13,7 +13,8 @@ import { BiRun } from "react-icons/bi";
 import { LuBike } from "react-icons/lu";
 import { GrYoga } from "react-icons/gr";
 import { FaPeoplePulling } from "react-icons/fa6";
-import { GiMountainClimbing } from "react-icons/gi";
+import { GiCampingTent } from "react-icons/gi";
+import { GiGreenhouse } from "react-icons/gi";
 
 import Container from "../Container";
 import CategoryBox from "../CategoryBox";
@@ -46,19 +47,14 @@ export const categories = [
     description: "This is property has a beautiful Run!",
   },
   {
-    label: "Bike",
-    icon: LuBike,
-    description: "This property is on an Bike!",
-  },
-  {
-    label: "Climb",
-    icon: GiMountainClimbing,
-    description: "This property is near a Climb!",
-  },
-  {
     label: "Yoga",
     icon: GrYoga,
     description: "This property has skiing Yoga!",
+  },
+  {
+    label: "Nông nghiệp xanh",
+    icon: GiGreenhouse,
+    description: "This property is nông nghiê xanh!",
   },
 
   {
