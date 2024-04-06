@@ -38,12 +38,12 @@ const RegisterModel = () => {
     axios
         .post("/api/register", data)
         .then(() => {
-          toast.success("Wow! great job, you have successfully registered");
+          toast.success("Wow! Tuyệt vời, bạn đã đăng ký thành công");
           RegisterModel.onClose();
           LoginModel.onOpen();
         })
         .catch((error) => {
-          toast.error(error.response.data.message || "An error occurred");
+          toast.error(error.response.data.message || "Đã xảy ra lỗi!");
         })
         .finally(() => {
           setIsLoaded(false);
@@ -71,25 +71,25 @@ const RegisterModel = () => {
             id="email"
             label="Email"
             type="email"
-            placeholder="Enter your email"
+            placeholder="Nhập email của bạn"
             required
             register={register}
             errors={errors}
         />
         <Input
             id="name"
-            label="Name"
+            label="Tên"
             type="text"
-            placeholder="Enter your password"
+            placeholder="Nhập tên của bạn"
             required
             register={register}
             errors={errors}
         />
         <Input
             id="password"
-            label="Password"
+            label="Mật khẩu"
             type="password"
-            placeholder="Enter your password"
+            placeholder="Nhập mật khẩu của bạn"
             required
             register={register}
             errors={errors}
@@ -118,7 +118,7 @@ const RegisterModel = () => {
               className="text-sm text-neutral-800 hover:underline transition duration-300"
               onClick={toggle}
           >
-            Login
+              Đăng nhập
           </button>
         </div>
       </div>
@@ -128,7 +128,7 @@ const RegisterModel = () => {
           disabled={isLoaded}
           isOpen={RegisterModel.isOpen}
           onClose={RegisterModel.onClose}
-          title="Đăng nhập"
+          title="Đăng ký"
           actionLabel="Tạo tài khoản"
           onSubmit={handleSubmit(onSubmit)}
           body={bodyContent}
