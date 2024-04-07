@@ -21,8 +21,8 @@ enum STEPS {
   LOCATION = 1,
   INFO = 2,
   IMAGES = 3,
-  DESCRIPTION = 5,
-  PRICE = 4,
+  DESCRIPTION = 4,
+  PRICE = 5,
 }
 
 const RentModel = () => {
@@ -44,8 +44,8 @@ const RentModel = () => {
       category: "",
       location: null,
       guestCount: 1, //tinh so nguoi choi
-      venueCount: 1, //tinh so san
-      fieldCount: 1, //tinh phan loai san
+      roomCount: 1, //tinh so san
+      bathroomCount: 1, //tinh phan loai san
       imageSrc: "",
       price: 1,
       description: "",
@@ -55,8 +55,8 @@ const RentModel = () => {
   const category = watch("category");
   const location = watch("location");
   const guestCount = watch("guestCount");
-  const roomCount = watch("venueCount");
-  const bathroomCount = watch("fieldCount");
+  const roomCount = watch("roomCount");
+  const bathroomCount = watch("bathroomCount");
   const imageSrc = watch("imageSrc");
 
   const Map = useMemo(
@@ -144,23 +144,23 @@ const RentModel = () => {
     </div>
   );
 
-  // // Location Step
-  // if (step === STEPS.LOCATION) {
-  //   bodyContent = (
-  //     <div className="flex flex-col gap-8">
-  //       <Heading
-  //         center={false}
-  //         title="Chỗ của bạn nằm ở đâu?"
-  //         subtitle="Giúp khách tìm thấy bạn!"
-  //       />
-  //       <CountrySelect
-  //         onChange={(value) => setCustomValue("location", value)}
-  //         value={location}
-  //       />
-  //       <Map center={location?.latlng} />
-  //     </div>
-  //   );
-  // }
+  // Location Step
+  if (step === STEPS.LOCATION) {
+    bodyContent = (
+      <div className="flex flex-col gap-8">
+        <Heading
+          center={false}
+          title="Chỗ của bạn nằm ở đâu?"
+          subtitle="Giúp khách tìm thấy bạn!"
+        />
+        <CountrySelect
+          onChange={(value) => setCustomValue("location", value)}
+          value={location}
+        />
+        <Map center={location?.latlng} />
+      </div>
+    );
+  }
 
   // Info Step (Guests, Rooms, Bathrooms) Step 3
   if (step === STEPS.INFO) {
@@ -176,14 +176,14 @@ const RentModel = () => {
           title="Sân/Phòng"
           subtitle="Bạn có bao nhiêu Sân/Phòng?"
           value={roomCount}
-          onChange={(value) => setCustomValue("venueCount", value)}
+          onChange={(value) => setCustomValue("roomCount", value)}
         />
         <hr />
         <Counter
           title="Số người cho 1 Sân/Phòng"
           subtitle="Số người cho 1 Sân/Phòng?"
           value={bathroomCount}
-          onChange={(value) => setCustomValue("fieldCount", value)}
+          onChange={(value) => setCustomValue("bathroomCount", value)}
         />
       </div>
     );
@@ -206,40 +206,40 @@ const RentModel = () => {
     );
   }
 
-  // Description Step 5 (Description)
-  if (step === STEPS.DESCRIPTION) {
-    bodyContent = (
-      <div className="flex flex-col gap-8">
-        <Heading
-          center={false}
-          title="How would you describe your place?"
-          subtitle="Write a detailed description to attract guests to your place
-          and let them know what to expect"
-        />
-        <Input
-          id="title"
-          label="Title"
-          disabled={isLoading}
-          register={register}
-          errors={errors}
-          required
-          placeholder="Ex: Cozy 2 Bedroom Apartment in the heart of Paris"
-        />
-        <hr />
-        <Input
-          id="description"
-          label="Description"
-          disabled={isLoading}
-          register={register}
-          errors={errors}
-          required
-          placeholder="Ex: Our apartment is located in the heart of Paris,"
-        />
-      </div>
-    );
-  }
+  // // Description Step 5 (Description)
+  // if (step === STEPS.DESCRIPTION) {
+  //   bodyContent = (
+  //     <div className="flex flex-col gap-8">
+  //       <Heading
+  //         center={false}
+  //         title="How would you describe your place?"
+  //         subtitle="Write a detailed description to attract guests to your place
+  //         and let them know what to expect"
+  //       />
+  //       <Input
+  //         id="title"
+  //         label="Title"
+  //         disabled={isLoading}
+  //         register={register}
+  //         errors={errors}
+  //         required
+  //         placeholder="Ex: Cozy 2 Bedroom Apartment in the heart of Paris"
+  //       />
+  //       <hr />
+  //       <Input
+  //         id="description"
+  //         label="Description"
+  //         disabled={isLoading}
+  //         register={register}
+  //         errors={errors}
+  //         required
+  //         placeholder="Ex: Our apartment is located in the heart of Paris,"
+  //       />
+  //     </div>
+  //   );
+  // }
 
-    if (step === STEPS.LOCATION) {
+    if (step === STEPS.DESCRIPTION) {
         bodyContent = (
             <div className="flex flex-col gap-8">
                 <Heading
