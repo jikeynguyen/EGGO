@@ -23,7 +23,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({ onChange, value }) => {
   return (
     <CldUploadWidget
       onUpload={handleUpload}
-      uploadPreset="co3q4ixj"
+      uploadPreset="gjbkisee"
       options={{
         maxFiles: 1,
       }}
@@ -55,12 +55,12 @@ const ImageUpload: React.FC<ImageUploadProps> = ({ onChange, value }) => {
                         font-semibold
                         text-lg            "
             >
-              Click here to Upload Image
+                Nhấn vào đây để đăng hình ảnh
             </div>
             {value && (
               <div className="absolute inset-0 w-full h-full">
                 <Image
-                  alt="Upload"
+                  alt="Đăng lên"
                   fill
                   style={{ objectFit: "cover" }}
                   src={value}
