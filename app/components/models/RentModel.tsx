@@ -21,8 +21,8 @@ enum STEPS {
   LOCATION = 1,
   INFO = 2,
   IMAGES = 3,
-  DESCRIPTION = 4,
-  PRICE = 5,
+  DESCRIPTION = 5,
+  PRICE = 4,
 }
 
 const RentModel = () => {
@@ -144,23 +144,23 @@ const RentModel = () => {
     </div>
   );
 
-  // Location Step
-  if (step === STEPS.LOCATION) {
-    bodyContent = (
-      <div className="flex flex-col gap-8">
-        <Heading
-          center={false}
-          title="Chỗ của bạn nằm ở đâu?"
-          subtitle="Giúp khách tìm thấy bạn!"
-        />
-        <CountrySelect
-          onChange={(value) => setCustomValue("location", value)}
-          value={location}
-        />
-        <Map center={location?.latlng} />
-      </div>
-    );
-  }
+  // // Location Step
+  // if (step === STEPS.LOCATION) {
+  //   bodyContent = (
+  //     <div className="flex flex-col gap-8">
+  //       <Heading
+  //         center={false}
+  //         title="Chỗ của bạn nằm ở đâu?"
+  //         subtitle="Giúp khách tìm thấy bạn!"
+  //       />
+  //       <CountrySelect
+  //         onChange={(value) => setCustomValue("location", value)}
+  //         value={location}
+  //       />
+  //       <Map center={location?.latlng} />
+  //     </div>
+  //   );
+  // }
 
   // Info Step (Guests, Rooms, Bathrooms) Step 3
   if (step === STEPS.INFO) {
@@ -170,12 +170,6 @@ const RentModel = () => {
           center={false}
           title="Nơi của bạn có thể chứa tối đa bao nhiêu người?"
           subtitle="Đảm bảo bao gồm tất cả khách, ngay cả khi họ là trẻ em"
-        />
-        <Counter
-          title="Khách hàng"
-          subtitle="Bạn cho phép bao nhiêu khách?"
-          value={guestCount}
-          onChange={(value) => setCustomValue("guestCount", value)}
         />
         <hr />
         <Counter
@@ -195,14 +189,14 @@ const RentModel = () => {
     );
   }
 
-  // Images Step 4
+  //Images Step 4
   if (step === STEPS.IMAGES) {
     bodyContent = (
       <div className="flex flex-col gap-8">
         <Heading
           center={false}
-          title="Upload images of your place"
-          subtitle="Show off your place to your guests"
+          title="Hãy thêm hình ảnh nơi của bạn"
+          subtitle="Khoe địa điểm của bạn với khách hàng"
         />
         <ImageUpload
           value={imageSrc}
@@ -219,7 +213,7 @@ const RentModel = () => {
         <Heading
           center={false}
           title="How would you describe your place?"
-          subtitle="Write a detailed description to attract guests to your place 
+          subtitle="Write a detailed description to attract guests to your place
           and let them know what to expect"
         />
         <Input
@@ -245,18 +239,41 @@ const RentModel = () => {
     );
   }
 
+    if (step === STEPS.LOCATION) {
+        bodyContent = (
+            <div className="flex flex-col gap-8">
+                <Heading
+                    center={false}
+                    title="Địa điểm của bạn nằm ở đâu?"
+                    subtitle="Hãy mô tả địa chỉ chi tiết để khách hàng có thể dễ dàng tìm thấy bạn!"
+                />
+                <Input
+                    id="title"
+                    label=""
+                    disabled={isLoading}
+                    register={register}
+                    errors={errors}
+                    required
+                    placeholder="VD: 33 Đ. Số 12, Trường Thọ, Thủ Đức, Thành phố Hồ Chí Minh"
+                />
+                <hr />
+
+            </div>
+        );
+    }
+
   // Price Step 6 (Price)
   if (step === STEPS.PRICE) {
     bodyContent = (
       <div className="flex flex-col gap-8">
         <Heading
           center={false}
-          title="Set a competitive price for your place"
-          subtitle="Set a price that reflects your place"
+          title="Thiết lập giá của bạn"
+          subtitle="Giá tính theo giờ đối với sân thể thao, và theo ngày đối với các chuyến đi"
         />
         <Input
           id="price"
-          label="Price"
+          label="Giá theo giờ"
           disabled={isLoading}
           register={register}
           errors={errors}
@@ -265,6 +282,17 @@ const RentModel = () => {
           type="number"
           placeholder="Ex: 100"
         />
+          <Input
+              id="price"
+              label="Giá theo ngày"
+              disabled={isLoading}
+              register={register}
+              errors={errors}
+              required
+              formatPrice
+              type="number"
+              placeholder="Ex: 100"
+          />
       </div>
     );
   }
