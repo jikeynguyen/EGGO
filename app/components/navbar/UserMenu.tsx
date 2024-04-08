@@ -55,7 +55,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
           duration-200
         "
                 >
-                    Đăng ký dịch vụ của bạn!
+                    Tạo hoạt động!
                 </div>
                 <div
                     onClick={toggleOpen}

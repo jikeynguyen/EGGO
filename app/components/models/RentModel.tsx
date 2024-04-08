@@ -19,9 +19,9 @@ import { useRouter } from "next/navigation";
 enum STEPS {
   CATEGORY = 0,
   LOCATION = 1,
-  INFO = 2,
-  IMAGES = 3,
-  DESCRIPTION = 4,
+  INFO = 3,
+  IMAGES = 4,
+  DESCRIPTION = 2,
   PRICE = 5,
 }
 
@@ -92,14 +92,14 @@ const RentModel = () => {
     axios
       .post("/api/listings", data)
       .then(() => {
-        toast.success("Congrats! Your listing has been created");
+        toast.success("Well! Bạn đã tạo thành công.");
         router.refresh();
         reset();
         setStep(STEPS.CATEGORY);
         RentModel.onClose();
       })
       .catch(() => {
-        toast.error("Ohh no! Something went wrong, please try again");
+        toast.error("Ohh no! Vui lòng thử lại");
       })
       .finally(() => {
         setIsLoading(false);
@@ -124,8 +124,8 @@ const RentModel = () => {
     <div className="flex flex-col gap-8">
       <Heading
         center={false}
-        title="Bạn muốn đăng ký hoạt động nào?"
-        subtitle="Chọn danh mục mô tả đúng nhất với dịch vụ của bạn"
+        title="Bạn muốn tạo hoạt động nào?"
+        subtitle="Chọn danh mục bạn muốn tạo"
       />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-h-[50vh] overflow-y-auto">
         {categories.map((item) => {
@@ -150,8 +150,8 @@ const RentModel = () => {
       <div className="flex flex-col gap-8">
         <Heading
           center={false}
-          title="Chỗ của bạn nằm ở đâu?"
-          subtitle="Giúp khách tìm thấy bạn!"
+          title="Bạn đến từ quốc gia nào?"
+          subtitle=""
         />
         <CountrySelect
           onChange={(value) => setCustomValue("location", value)}
@@ -168,13 +168,13 @@ const RentModel = () => {
       <div className="flex flex-col gap-8">
         <Heading
           center={false}
-          title="Nơi của bạn có thể chứa tối đa bao nhiêu người?"
-          subtitle="Đảm bảo bao gồm tất cả khách, ngay cả khi họ là trẻ em"
+          title="Bạn muốn tham gia nhóm bao khoảng bao nhiêu người?"
+          subtitle=""
         />
         <hr />
         <Counter
-          title="Sân/Phòng"
-          subtitle="Bạn có bao nhiêu Sân/Phòng?"
+          title="Hãy mô tả về trình độ của hoạt động này"
+          subtitle="Đánh giá theo 3 mức độ:    Trung Bình - Khá - Tốt"
           value={roomCount}
           onChange={(value) => setCustomValue("roomCount", value)}
         />
@@ -195,8 +195,8 @@ const RentModel = () => {
       <div className="flex flex-col gap-8">
         <Heading
           center={false}
-          title="Hãy thêm hình ảnh nơi của bạn"
-          subtitle="Khoe địa điểm của bạn với khách hàng"
+          title="Hãy thêm hình ảnh nơi bạn muốn tạo!"
+          subtitle="Khoe địa điểm của bạn với các đồng đội khác"
         />
         <ImageUpload
           value={imageSrc}
@@ -244,8 +244,8 @@ const RentModel = () => {
             <div className="flex flex-col gap-8">
                 <Heading
                     center={false}
-                    title="Địa điểm của bạn nằm ở đâu?"
-                    subtitle="Hãy mô tả địa chỉ chi tiết để khách hàng có thể dễ dàng tìm thấy bạn!"
+                    title="Địa điểm nơi bạn muốn tạo nằm ở đâu?"
+                    subtitle="Hãy mô tả địa chỉ chi tiết để đồng đội có thể dễ dàng tìm thấy bạn!"
                 />
                 <Input
                     id="title"
