@@ -15,6 +15,8 @@ interface ListingInfoProps {
   guestCount: number;
   roomCount: number;
   bathroomCount: number;
+  options: string;
+
   category:
     | {
         icon: IconType;
@@ -33,6 +35,8 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
   bathroomCount,
   category,
   locationValue,
+  options,
+  
 }) => {
   const { getByValues } = useCountries();
   const coordinate = getByValues(locationValue)?.latlng;
@@ -50,7 +54,7 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
           gap-2
         "
         >
-          <div>Hosted by {user?.name}</div>
+          <div>Đăng bởi {user?.name}</div>
           <Avatar src={user?.image} />
         </div>
         <div
@@ -64,8 +68,10 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
         "
         >
           <div>{guestCount} guests</div>
-          <div>{roomCount} rooms</div>
-          <div>{bathroomCount} bathrooms</div>
+          <div>Số người {bathroomCount} </div>
+          <div>Trình độ {options} </div>
+          <div>Mô tả {description} </div>
+          <div>Vị trí {locationValue} </div>
         </div>
       </div>
       <hr />

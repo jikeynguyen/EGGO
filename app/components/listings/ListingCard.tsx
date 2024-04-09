@@ -35,6 +35,7 @@ const ListingCard: React.FC<ListingCardProps> = ({
 
   const { getByValues } = useCountries();
   const location = getByValues(data.locationValue);
+  const nameOfService = getByValues(data.description);
 
   console.log(location?.label);
   const handleCancel = useCallback(
@@ -109,8 +110,11 @@ const ListingCard: React.FC<ListingCardProps> = ({
           </div>
         </div>
         <div className="font-semibold text-lg">
-          {location?.label} , {location?.region}
+          {data.title && data.title.charAt(0) === ","
+            ? data.title.substring(1)
+            : data.title}
         </div>
+
         <div
           className="
           font-light text-neutral-500
@@ -123,14 +127,14 @@ const ListingCard: React.FC<ListingCardProps> = ({
           flex flex-row items-center gap-1
         "
         >
-          <div className="font-semibold">${price}</div>
+          <div className="font-semibold">{price} VNĐ</div>
           {!reservation && (
             <div
               className="
               font-light text-neutral-500
             "
             >
-              / night
+              / Giờ
             </div>
           )}
         </div>

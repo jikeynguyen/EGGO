@@ -139,6 +139,7 @@ const ListingClient: React.FC<ListingProps> = ({
               guestCount={listing.guestCount}
               bathroomCount={listing.bathroomCount}
               locationValue={listing.locationValue}
+              options={listing.locationValue}
             />
             <div
               className="

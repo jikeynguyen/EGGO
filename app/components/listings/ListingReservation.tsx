@@ -49,7 +49,7 @@ const ListingReservation: React.FC<ListingReservationProps> = ({
 
         "
         >
-          ${price}
+          {price} VNĐ
         </div>
         <div
           className="
@@ -57,7 +57,7 @@ const ListingReservation: React.FC<ListingReservationProps> = ({
             text-neutral-500
         "
         >
-          per night
+          / Giờ
         </div>
       </div>
       <hr />
@@ -68,7 +68,7 @@ const ListingReservation: React.FC<ListingReservationProps> = ({
       />
       <hr />
       <div className="p-4">
-        <Button onClick={onSubmit} disabled={disabled} label="Reserve" />
+        <Button onClick={onSubmit} disabled={disabled} label="Đặt dịch vụ" />
       </div>
       <div
         className="
@@ -80,8 +80,8 @@ const ListingReservation: React.FC<ListingReservationProps> = ({
             font-semibold
             text-lg"
       >
-        <div>Total</div>
-        <div>${totalPrice}</div>
+        <div>Tổng tiền</div>
+        <div>{totalPrice} VNĐ</div>
       </div>
     </div>
   );
