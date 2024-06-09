@@ -57,8 +57,8 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
           <div>Đăng bởi {user?.name}</div>
           <Avatar src={user?.image} />
         </div>
-        <div
-          className="
+          <div
+              className="
           flex 
           flex-row 
           items-center 
@@ -66,16 +66,16 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
           font-light
           text-neutral-500
         "
-        >
-          <div>{guestCount} guests</div>
-          <div>Số người {bathroomCount} </div>
-          <div>Trình độ {options} </div>
-          <div>Mô tả {description} </div>
-          <div>Vị trí {locationValue} </div>
-        </div>
+          >
+
+              <div>Số sân {roomCount} </div>
+              <div>Số người {bathroomCount} </div>
+              {/*<div>Địa chỉ {description} </div>*/}
+              {/*<div>Vị trí {locationValue} </div>*/}
+          </div>
       </div>
-      <hr />
-      {category && (
+        <hr/>
+        {category && (
         <ListingCategory
           icon={category.icon}
           label={category?.label}
