@@ -25,11 +25,11 @@ const TripsClient: React.FC<TripsClientProps> = ({
       axios
         .delete(`/api/reservations/${id}`)
         .then(() => {
-          toast.success("Reservation cancelled");
+          toast.success("Hủy đặt sân");
           router.refresh();
         })
         .catch((error: any) => {
-          toast.error(error?.response?.data?.error || "Something went wrong");
+          toast.error(error?.response?.data?.error || "Hãy thử lại");
         })
         .finally(() => {
           setDeletingId("");
@@ -42,8 +42,8 @@ const TripsClient: React.FC<TripsClientProps> = ({
     <Container>
       <Heading
         center={false}
-        title="Your Trips"
-        subtitle="Where you're going and where you've been."
+        title="Sân đã đặt của bạn"
+        subtitle="Hãy nhận sân đúng giờ và tận hưởng cuộc chơi nhé."
       />
       <div
         className="
@@ -65,7 +65,7 @@ const TripsClient: React.FC<TripsClientProps> = ({
             reservation={reservation}
             actionId={reservation.id}
             disabled={deletingId === reservation.id}
-            actionLabel="Cancel Reservation"
+            actionLabel="Hủy đặt sân"
             currentUser={currentUser}
             onAction={onCancel}
           />
