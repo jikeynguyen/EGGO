@@ -12,8 +12,8 @@ const ReservationPage = async () => {
     return (
       <ClientOnly>
         <EmptyState
-          title="You are not logged in"
-          subtitle="Log in to see your reservations"
+          title="Bạn chưa đăng nhập!"
+          subtitle="Đăng nhập để xem đặt chỗ của bạn"
         />
         ;
       </ClientOnly>
@@ -26,8 +26,8 @@ const ReservationPage = async () => {
     return (
       <ClientOnly>
         <EmptyState
-          title="No reservations"
-          subtitle="Looks like you haven't made any reservations yet. on your properties."
+          title="Chưa có sân đã đặt"
+          subtitle="Có vẻ như bạn chưa thực hiện bất kỳ đặt chỗ nào"
         />
       </ClientOnly>
     );

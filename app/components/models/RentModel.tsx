@@ -21,14 +21,10 @@ enum STEPS {
   LOCATION = 1,
   INFO = 3,
   IMAGES = 4,
-  DESCRIPTION = 2,
+  DESCRIPTION = 2,   //dia diem
   PRICE = 5,
 }
-const options = [
-  { value: "Chưa từng", label: "Chưa từng" },
-  { value: "Đã biết", label: "Đã biết" },
-  { value: "Cao thủ", label: "Cao thủ" },
-];
+
 const RentModel = () => {
   const router = useRouter();
 
@@ -54,7 +50,7 @@ const RentModel = () => {
       price: 1,
       description: "",
       level: "Trung bình",
-      option:"Đã biết"
+      options:"Đã biết"
     },
   });
 
@@ -132,7 +128,7 @@ const RentModel = () => {
     <div className="flex flex-col gap-8">
       <Heading
         center={false}
-        title="Bạn muốn tạo hoạt động nào?"
+        title="Bạn muốn cho thuê sân cho môn thể thao nào?"
         subtitle="Chọn danh mục bạn muốn tạo"
       />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-h-[50vh] overflow-y-auto">
@@ -172,31 +168,18 @@ const RentModel = () => {
       <div className="flex flex-col gap-8">
         <Heading
           center={false}
-          title="Bạn muốn tham gia nhóm bao khoảng bao nhiêu người?"
+          title="Tổng số sân bạn đang có"
           subtitle=""
         />
 
         <hr />
         <Counter
-          title="Số người cho 1 Sân/Phòng"
-          subtitle="Số người cho 1 Sân/Phòng?"
+          title="Số lượng sân?"
+          subtitle=""
           value={bathroomCount}
           onChange={(value) => setCustomValue("bathroomCount", value)}
         />
         <hr />
-        <div>
-          <p>Hãy chọn trình độ của bạn:</p>
-          <Select
-            id="options"
-            name="options"
-            options={options}
-            onChange={(selectedOption) => {
-              if (selectedOption) {
-                setCustomValue("options", selectedOption.value);
-              }
-            }}
-          />
-        </div>
       </div>
     );
   }
@@ -208,7 +191,7 @@ const RentModel = () => {
         <Heading
           center={false}
           title="Hãy thêm hình ảnh nơi bạn muốn tạo!"
-          subtitle="Khoe địa điểm của bạn với các đồng đội khác"
+          subtitle="Hình ảnh đẹp nhất để thu hút người thuê"
         />
         <ImageUpload
           value={imageSrc}
@@ -256,8 +239,9 @@ const RentModel = () => {
         <Heading
           center={false}
           title="Địa điểm nơi bạn muốn tạo nằm ở đâu?"
-          subtitle="Hãy mô tả địa chỉ chi tiết để đồng đội có thể dễ dàng tìm thấy bạn!"
+          subtitle="Hãy mô tả địa chỉ chi tiết để khách hàng có thể dễ dàng tìm thấy bạn!"
         />
+
         <Input
           id="title"
           label=""
@@ -279,11 +263,11 @@ const RentModel = () => {
         <Heading
           center={false}
           title="Thiết lập giá của bạn"
-          subtitle="Giá tính theo giờ đối với sân thể thao, và theo ngày đối với các chuyến đi"
+          subtitle="Giá tính theo giờ đối với 1 sân thể thao"
         />
         <Input
           id="Số giờ"
-          label="Số giờ muốn thuê"
+          label=""
           disabled={isLoading}
           register={register}
           errors={errors}
@@ -291,17 +275,7 @@ const RentModel = () => {
           type="number"
           placeholder="Ex: 1 giờ"
         />
-        <Input
-          id="price"
-          label="Giá theo giờ"
-          disabled={isLoading}
-          register={register}
-          errors={errors}
-          required
-          formatPrice
-          type="number"
-          placeholder="Ex: 100"
-        />
+
       </div>
     );
   }
