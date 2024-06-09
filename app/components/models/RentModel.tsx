@@ -1,5 +1,5 @@
 "use client";
-
+import Select from "react-select";
 import useRentModel from "@/app/hooks/useRentModel";
 import Model from "./Model";
 import { useMemo, useState } from "react";
@@ -21,7 +21,7 @@ enum STEPS {
   LOCATION = 1,
   INFO = 3,
   IMAGES = 4,
-  DESCRIPTION = 2,
+  DESCRIPTION = 2,   //dia diem
   PRICE = 5,
 }
 
@@ -49,6 +49,8 @@ const RentModel = () => {
       imageSrc: "",
       price: 1,
       description: "",
+      level: "Trung bình",
+      options:"Đã biết"
     },
   });
 
@@ -56,8 +58,10 @@ const RentModel = () => {
   const location = watch("location");
   const guestCount = watch("guestCount");
   const roomCount = watch("roomCount");
+  const level = watch("level");
   const bathroomCount = watch("bathroomCount");
   const imageSrc = watch("imageSrc");
+  
 
   const Map = useMemo(
     () =>
@@ -124,7 +128,7 @@ const RentModel = () => {
     <div className="flex flex-col gap-8">
       <Heading
         center={false}
-        title="Bạn muốn tạo hoạt động nào?"
+        title="Bạn muốn cho thuê sân cho môn thể thao nào?"
         subtitle="Chọn danh mục bạn muốn tạo"
       />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-h-[50vh] overflow-y-auto">
@@ -148,11 +152,7 @@ const RentModel = () => {
   if (step === STEPS.LOCATION) {
     bodyContent = (
       <div className="flex flex-col gap-8">
-        <Heading
-          center={false}
-          title="Bạn đến từ quốc gia nào?"
-          subtitle=""
-        />
+        <Heading center={false} title="Bạn đến từ quốc gia nào?" subtitle="" />
         <CountrySelect
           onChange={(value) => setCustomValue("location", value)}
           value={location}
@@ -168,23 +168,18 @@ const RentModel = () => {
       <div className="flex flex-col gap-8">
         <Heading
           center={false}
-          title="Bạn muốn tham gia nhóm bao khoảng bao nhiêu người?"
+          title="Tổng số sân bạn đang có"
           subtitle=""
         />
+
         <hr />
         <Counter
-          title="Hãy mô tả về trình độ của hoạt động này"
-          subtitle="Đánh giá theo 3 mức độ:    Trung Bình - Khá - Tốt"
-          value={roomCount}
-          onChange={(value) => setCustomValue("roomCount", value)}
-        />
-        <hr />
-        <Counter
-          title="Số người cho 1 Sân/Phòng"
-          subtitle="Số người cho 1 Sân/Phòng?"
+          title="Số lượng sân?"
+          subtitle=""
           value={bathroomCount}
           onChange={(value) => setCustomValue("bathroomCount", value)}
         />
+        <hr />
       </div>
     );
   }
@@ -196,7 +191,7 @@ const RentModel = () => {
         <Heading
           center={false}
           title="Hãy thêm hình ảnh nơi bạn muốn tạo!"
-          subtitle="Khoe địa điểm của bạn với các đồng đội khác"
+          subtitle="Hình ảnh đẹp nhất để thu hút người thuê"
         />
         <ImageUpload
           value={imageSrc}
@@ -206,7 +201,6 @@ const RentModel = () => {
     );
   }
 
-  // // Description Step 5 (Description)
   // if (step === STEPS.DESCRIPTION) {
   //   bodyContent = (
   //     <div className="flex flex-col gap-8">
@@ -239,28 +233,28 @@ const RentModel = () => {
   //   );
   // }
 
-    if (step === STEPS.DESCRIPTION) {
-        bodyContent = (
-            <div className="flex flex-col gap-8">
-                <Heading
-                    center={false}
-                    title="Địa điểm nơi bạn muốn tạo nằm ở đâu?"
-                    subtitle="Hãy mô tả địa chỉ chi tiết để đồng đội có thể dễ dàng tìm thấy bạn!"
-                />
-                <Input
-                    id="title"
-                    label=""
-                    disabled={isLoading}
-                    register={register}
-                    errors={errors}
-                    required
-                    placeholder="VD: 33 Đ. Số 12, Trường Thọ, Thủ Đức, Thành phố Hồ Chí Minh"
-                />
-                <hr />
+  if (step === STEPS.DESCRIPTION) {
+    bodyContent = (
+      <div className="flex flex-col gap-8">
+        <Heading
+          center={false}
+          title="Địa điểm nơi bạn muốn tạo nằm ở đâu?"
+          subtitle="Hãy mô tả địa chỉ chi tiết để khách hàng có thể dễ dàng tìm thấy bạn!"
+        />
 
-            </div>
-        );
-    }
+        <Input
+          id="title"
+          label=""
+          disabled={isLoading}
+          register={register}
+          errors={errors}
+          required
+          placeholder="VD: 33 Đ. Số 12, Trường Thọ, Thủ Đức, Thành phố Hồ Chí Minh"
+        />
+        <hr />
+      </div>
+    );
+  }
 
   // Price Step 6 (Price)
   if (step === STEPS.PRICE) {
@@ -269,30 +263,19 @@ const RentModel = () => {
         <Heading
           center={false}
           title="Thiết lập giá của bạn"
-          subtitle="Giá tính theo giờ đối với sân thể thao, và theo ngày đối với các chuyến đi"
+          subtitle="Giá tính theo giờ đối với 1 sân thể thao"
         />
         <Input
-          id="price"
-          label="Giá theo giờ"
+          id="Số giờ"
+          label=""
           disabled={isLoading}
           register={register}
           errors={errors}
           required
-          formatPrice
           type="number"
-          placeholder="Ex: 100"
+          placeholder="Ex: 1 giờ"
         />
-          <Input
-              id="price"
-              label="Giá theo ngày"
-              disabled={isLoading}
-              register={register}
-              errors={errors}
-              required
-              formatPrice
-              type="number"
-              placeholder="Ex: 100"
-          />
+
       </div>
     );
   }

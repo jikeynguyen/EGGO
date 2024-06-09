@@ -107,8 +107,8 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
                             <>
                                 <MenuItem onClick={() => router.push("/")} label="Trang chủ" />
                                 <MenuItem
-                                    onClick={() => router.push("/history")}
-                                    label="Lịch sử hoạt động"
+                                    onClick={() => router.push("/trips")}
+                                    label="Sân đã đặt"
                                 />
                                 <MenuItem
                                     onClick={() => router.push("/favorites")}
@@ -120,7 +120,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
                                 />
                                 <MenuItem
                                     onClick={() => router.push("/properties")}
-                                    label="Đăng ký dịch vụ của bạn"
+                                    label="Sân cho thuê của bạn"
                                 />
                                 <MenuItem
                                     onClick={rentModel.onOpen}

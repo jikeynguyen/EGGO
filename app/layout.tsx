@@ -16,8 +16,8 @@ import { getCurrentUser } from "./actions/getCurrentUser";
 
 export const metadata: Metadata = {
   title: "EGGO",
-  description: "This is a great place for you to set up a playground for entertainment activities and connect quickly, safely, and conveniently ✨",
-  /* icons: {icon: '/Users/thinhpld0/Desktop/IU/Startup/youtube2/test/Your-Hotel-Hotel-Booking-Using-NEXTJS-/app/icon.png'} */
+  description: "Đây là nơi tuyệt vời để bạn thiết lập sân chơi cho các hoạt động thể thao, giải trí và kết nối nhanh chóng, an toàn và thuận tiện ✨",
+
   
 };
 

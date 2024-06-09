@@ -15,8 +15,8 @@ const FavoritesClientOnly: React.FC<FavoritesClientOnlyProps> = ({
     <Container>
       <Heading
         center
-        title="Your Favorites List"
-        subtitle="Here are the properties you've added to your favorites list."
+        title="Sân yêu thích của bạn"
+        subtitle="Đây là những sân bạn đã thêm vào danh sách yêu thích của mình"
       />
       <div
         className="

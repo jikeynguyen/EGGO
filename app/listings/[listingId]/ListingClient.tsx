@@ -68,7 +68,7 @@ const ListingClient: React.FC<ListingProps> = ({
       })
       .then(() => {
         toast.success(
-          "Congratulations!🎉 You have successfully booked this listing."
+          "Chúc mừng!🎉 Sân của bạn đã được đặt."
         );
         setDateRange(initialDateRange);
         // Reerect to /trips page
@@ -77,7 +77,7 @@ const ListingClient: React.FC<ListingProps> = ({
       })
       .catch((error) => {
         toast.error(
-          "Oops!🤥 looks like something went wrong. Please try again."
+          "Oops!🤥 Có vẻ như đã xảy ra sự cố. Vui lòng thử lại."
         );
         console.log(error);
       })
@@ -139,6 +139,7 @@ const ListingClient: React.FC<ListingProps> = ({
               guestCount={listing.guestCount}
               bathroomCount={listing.bathroomCount}
               locationValue={listing.locationValue}
+              options={listing.locationValue}
             />
             <div
               className="

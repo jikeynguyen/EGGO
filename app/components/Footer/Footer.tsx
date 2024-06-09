@@ -26,8 +26,8 @@ const Footer = () => {
           <br />
           <div>
             <p className="heading">Liên hệ: </p>
-            <p>- Địa chỉ: Văn phòng ABC ĐH Quốc Tế ĐHQG TP. HCM</p>
-            <p>- Số điện thoại: 0987654321</p>
+            <p>- Địa chỉ: ABC </p>
+            <p>- Số điện thoại: 0123456789</p>
           </div>
         </div>
         <div className="column4">

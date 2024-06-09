@@ -1,10 +1,6 @@
 "use client";
 
-import {
-
-  GiForestCamp
-
-} from "react-icons/gi";
+import { GiForestCamp } from "react-icons/gi";
 import { MdSportsSoccer } from "react-icons/md";
 import { IoTennisball } from "react-icons/io5";
 import { GiShuttlecock } from "react-icons/gi";
@@ -22,50 +18,51 @@ import { usePathname, useSearchParams } from "next/navigation";
 
 export const categories = [
   {
-    label: "Soccer",
+    label: "Bóng đá",
     icon: MdSportsSoccer,
-    description: "This property is close to the Soccer!",
+    description: "Chúc bạn có những trải nghiệm Bóng Đá trọn vẹn nhất!",
   },
   {
     label: "Tennis",
     icon: IoTennisball,
-    description: "This property is Tennis!",
+    description: "Chúc bạn có những trải nghiệm Tennis trọn vẹn nhất!",
   },
   {
-    label: "Badminton",
+    label: "Cầu lông",
     icon: GiShuttlecock,
-    description: "This property is Badminton!",
+    description: "Chúc bạn có những trải nghiệm Cầu lông trọn vẹn nhất!",
   },
   {
-    label: "Swim",
+    label: "Bơi",
     icon: GrSwim,
-    description: "This property is Swim!",
+    description: "Chúc bạn có những trải nghiệm bơi lội trọn vẹn!",
   },
   {
-    label: "Run",
+    label: "Chạy",
     icon: BiRun,
-    description: "This is property has a beautiful Run!",
+    description: "Hãy chinh phục những cung đường phía trước!",
   },
   {
     label: "Yoga",
     icon: GrYoga,
-    description: "This property has skiing Yoga!",
+    description:
+      "Chúc bạn có những giây phút hoà mình với Yoga trọn vẹn nhất!!",
   },
   {
     label: "Nông nghiệp xanh",
     icon: GiGreenhouse,
-    description: "This property is Nông nghiệp xanh!",
+    description: "Chúc bạn có những trải nghiệm Nông nghiệp xanh thật kì thú!",
   },
 
   {
-    label: "Camping",
+    label: "Cắm trại",
     icon: GiForestCamp,
-    description: "This property offers camping activities!",
+    description: "Chúc bạn có những chuyến đi thật trọn!",
   },
   {
-    label: "Anything with You",
+    label: "Kết nối 4 phương",
     icon: FaPeoplePulling,
-    description: "This property makes new friend!",
+    description: "Nơi đâu cũng được chỉ cần có nhau!",
   },
 ];
 
