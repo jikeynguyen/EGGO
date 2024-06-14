@@ -47,7 +47,7 @@ const RentModel = () => {
             roomCount: 1, //tinh so san
             bathroomCount: 1, //tinh phan loai san
             imageSrc: "",
-            price: 1,
+            price: "",
             description: "",
         },
     });
@@ -182,8 +182,8 @@ const RentModel = () => {
                 <Counter
                     title="Số người cho 1 Sân"
                     subtitle="Số người cho 1 Sân?"
-                    value={bathroomCount}
-                    onChange={(value) => setCustomValue("bathroomCount", value)}
+                    value={guestCount}
+                    onChange={(value) => setCustomValue("guestCount", value)}
                 />
             </div>
         );
@@ -245,11 +245,11 @@ const RentModel = () => {
                 <Heading
                     center={false}
                     title="Hãy mô tả địa chỉ chi tiết để khách hàng có thể dễ dàng tìm thấy bạn!"
-                    subtitle="VD:Sân Cầu Lông Victory - 33 Đ. Số 12, Trường Thọ, Thủ Đức, Thành phố Hồ Chí Minh"
+                    subtitle="VD: Sân Cầu Lông Victory - 33 Đ. Số 12, Trường Thọ, Thủ Đức, HCM"
                 />
                 <Input
                     id="title"
-                    label="Tên Sân và Địa chỉ của bạn"
+                    label="Tên Sân"
                     disabled={isLoading}
                     register={register}
                     errors={errors}
@@ -257,6 +257,15 @@ const RentModel = () => {
                     placeholder="VD: 33 Đ. Số 12, Trường Thọ, Thủ Đức, Thành phố Hồ Chí Minh"
                 />
                 <hr />
+                <Input
+                        id="description"
+                        label="Địa chỉ"
+                        disabled={isLoading}
+                        register={register}
+                        errors={errors}
+                        required
+                        placeholder="Ex: Our apartment is located in the heart of Paris,"
+                      />
 
             </div>
         );

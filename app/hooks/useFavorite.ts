@@ -41,9 +41,9 @@ const useFavorite = ({ listingId, currentUser }: IUseFavorite) => {
 
         await request();
         router.refresh();
-        toast.success("Your favorite has been updated!");
+        toast.success("Đã thêm vào danh sách yêu thích!");
       } catch (error) {
-        toast.error("Something went wrong.");
+        toast.error("Vui lòng thử lại");
         console.log(error);
       }
     },

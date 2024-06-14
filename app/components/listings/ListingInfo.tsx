@@ -69,8 +69,8 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
           >
 
               <div>Số sân {roomCount} </div>
-              <div>Số người {bathroomCount} </div>
-              {/*<div>Địa chỉ {description} </div>*/}
+              <div>Số người {guestCount} </div>
+              {/*<div>Địa chỉ {guestCount} </div>*/}
               {/*<div>Vị trí {locationValue} </div>*/}
           </div>
       </div>

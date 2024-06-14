@@ -43,51 +43,51 @@ const Search = () => {
       return `${guestCount} Guests`;
     }
 
-    return "Địa điểm ưu thích";
+    return "";
   }, [guestCount]);
 
   return (
     <div
       onClick={searchModel.onOpen}
       className="
-      border-[1px] 
-      w-full 
-      md:w-auto 
-      py-2 
-      rounded-full 
-      shadow-sm 
-      hover:shadow-md 
-      transition 
+      border-[1px]
+      w-full
+      md:w-auto
+      py-2
+      rounded-full
+      shadow-sm
+      hover:shadow-md
+      transition
       cursor-pointer
     "
     >
       <div
         className="
-        flex 
-        flex-row 
-        items-center 
+        flex
+        flex-row
+        items-center
         justify-between
       "
       >
         <div
           className="
-          text-sm 
-          pl-6 
-          pr-2 
-          text-gray-600 
-          flex 
-          flex-row 
-          items-center 
+          text-sm
+          pl-6
+          pr-2
+          text-gray-600
+          flex
+          flex-row
+          items-center
           gap-3
-          
+
         "
         >
           <div className="hidden sm:block">{guestLabel}</div>
           <div
             className="
-            p-2 
-            bg-black 
-            rounded-full 
+            p-2
+            bg-black
+            rounded-full
             text-white
           "
           >

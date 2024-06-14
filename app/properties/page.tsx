@@ -13,8 +13,8 @@ const PropertiesPage = async () => {
     return (
       <ClientOnly>
         <EmptyState
-          title="Seems like you're not logged in"
-          subtitle="Log in to see your trips."
+          title="Bạn chưa đăng nhập"
+          subtitle="Đăng nhập để quản lý các sân cho thuê của bạn."
         />
       </ClientOnly>
     );
@@ -28,8 +28,8 @@ const PropertiesPage = async () => {
     return (
       <ClientOnly>
         <EmptyState
-          title="Looks Like no properties are available for you."
-          subtitle="Host a property to get started"
+          title="Có vẻ như không có sân nào dành cho bạn."
+          subtitle="Hãy bắt đầu đăng ký sân của bạn để trở thành đối tác của EGGO"
         />
 
       </ClientOnly>

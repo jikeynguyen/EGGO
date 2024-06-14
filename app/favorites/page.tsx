@@ -12,7 +12,7 @@ const FavoritesPage = async () => {
     return (
       <ClientOnly>
         <EmptyState
-          title="Oops! Bạn chưa có sân yêu thích nào"
+          title="Bạn chưa có sân yêu thích nào"
           subtitle="Có vẻ như bạn chưa thêm bất kỳ sân nào vào danh sách yêu thích của mình. Hãy tiếp tục và tìm sân chơi thể thao mơ ước của bạn và thêm nó vào mục yêu thích của bạn"
           showRest
         />

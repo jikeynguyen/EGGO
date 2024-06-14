@@ -13,8 +13,8 @@ const TripsPage = async () => {
     return (
       <ClientOnly>
         <EmptyState
-          title="Seems like you're not logged in"
-          subtitle="Log in to see your trips."
+          title="Bạn chưa đăng nhập"
+          subtitle="Đăng nhập để xem sân đã đặt."
         />
       </ClientOnly>
     );
@@ -28,8 +28,8 @@ const TripsPage = async () => {
     return (
       <ClientOnly>
         <EmptyState
-          title="Looks like you don't have any trips yet."
-          subtitle="Book a trip to see your reservations here."
+          title="Không có sân đã đặt"
+          subtitle="Đặt một sân chơi để xem sân đã đặt của bạn ở đây."
         />
 
       </ClientOnly>

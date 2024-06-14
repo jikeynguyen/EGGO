@@ -55,7 +55,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
           duration-200
         "
                 >
-                    Tạo hoạt động!
+                    Đăng ký cho thuê!
                 </div>
                 <div
                     onClick={toggleOpen}
@@ -106,13 +106,13 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
                         {currentUser ? (
                             <>
                                 <MenuItem onClick={() => router.push("/")} label="Trang chủ" />
-                                <MenuItem
-                                    onClick={() => router.push("/trips")}
-                                    label="Sân đã đặt"
-                                />
+                                {/*<MenuItem*/}
+                                {/*    onClick={() => router.push("/trips")}*/}
+                                {/*    label="Sân đã đặt"*/}
+                                {/*/>*/}
                                 <MenuItem
                                     onClick={() => router.push("/favorites")}
-                                    label="Nơi yêu thích của bạn"
+                                    label="Danh sách yêu thích"
                                 />
                                 <MenuItem
                                     onClick={() => router.push("/reservations")}
