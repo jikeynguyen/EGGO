@@ -1,0 +1,52 @@
+.gm-style-iw-t {
+  .gm-style-iw {
+    padding: 16px 16px !important;
+    box-shadow: none;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(8px);
+    max-width: none !important;
+    // For IE
+    -webkit-backdrop-filter: blur(8px);
+    border: 0.5px solid rgba(0, 0, 0, 0.1) !important;
+
+    .gm-style-iw-d {
+      overflow: hidden !important;
+    }
+
+    .gm-style-iw-chr {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+      padding-left: 8px;
+
+      button.gm-ui-hover-effect {
+        width: fit-content !important;
+        height: fit-content !important;
+        position: absolute !important;
+        right: 8px !important;
+        top: 8px !important;
+        border-radius: 100% !important;
+        background-color: rgba(0, 0, 0, 0.1) !important;
+        padding: 4px !important;
+
+        span {
+          margin: 0 !important;
+          width: 12px !important;
+          height: 12px !important;
+        }
+      }
+
+      .gm-style-iw-ch {
+        padding: 0 !important;
+        font-size: 1rem;
+        font-weight: bold;
+        color: var(--primary);
+        letter-spacing: 0.5px;
+      }
+    }
+  }
+
+  .gm-style-iw-tc {
+    display: none;
+  }
+}
