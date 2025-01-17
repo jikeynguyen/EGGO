@@ -148,6 +148,7 @@ const RentModel = () => {
     if (step === STEPS.LOCATION) {
         bodyContent = (
             <div className="flex flex-col gap-8">
+
                 <Heading
                     center={false}
                     title="Bạn đến từ quốc gia nào?"
@@ -172,6 +173,12 @@ const RentModel = () => {
                     subtitle=""
                 />
                 <hr />
+                <Counter
+                    title="Tổng số phòng bạn đang có"
+                    subtitle="Bạn có bao nhiêu phòng?"
+                    value={bathroomCount}
+                    onChange={(value) => setCustomValue("bathroomCount", value)}
+                />
                 <Counter
                     title="Tổng số sân bạn đang có"
                     subtitle="Bạn có bao nhiêu Sân?"
@@ -258,15 +265,14 @@ const RentModel = () => {
                 />
                 <hr />
                 <Input
-                        id="description"
-                        label="Địa chỉ"
-                        disabled={isLoading}
-                        register={register}
-                        errors={errors}
-                        required
-                        placeholder="Ex: Our apartment is located in the heart of Paris,"
-                      />
-
+                    id="description"
+                    label="Địa chỉ"
+                    disabled={isLoading}
+                    register={register}
+                    errors={errors}
+                    required
+                    placeholder="Ex: Our apartment is located in the heart of Paris,"
+                />
             </div>
         );
     }
